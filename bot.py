@@ -54,12 +54,35 @@ def apply_markup(lines, extra):
     return out
 
 
+PASSWORDS = {  # optional: only people who know the password can open the page (prices are encrypted)
+    "index.html":  os.environ.get("PASS_IZONE", ""),
+    "espace.html": os.environ.get("PASS_ESPACE", ""),
+}
+
+
+def encrypt(text, password):
+    import json, secrets
+    from cryptography.hazmat.primitives import hashes
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+    iters, salt, iv = 200000, secrets.token_bytes(16), secrets.token_bytes(12)
+    key = PBKDF2HMAC(algorithm=hashes.SHA256(), length=32, salt=salt, iterations=iters).derive(password.encode())
+    ct = AESGCM(key).encrypt(iv, text.encode(), None)
+    e = lambda x: base64.b64encode(x).decode()
+    return json.dumps({"s": e(salt), "v": e(iv), "c": e(ct), "i": iters})
+
+
 def build(lines):
     """Writes one html file per store. Returns {filename: html}."""
     tpl = open(os.path.join(os.path.dirname(__file__), "template.html"), encoding="utf-8").read()
     pages = {}
     for name, extra in STORES.items():
-        html = tpl.replace("__RAW__", "\n".join(apply_markup(lines, extra)))
+        raw = "\n".join(apply_markup(lines, extra))
+        pw = PASSWORDS.get(name, "")
+        if pw:
+            html = tpl.replace("__ENC__", encrypt(raw, pw)).replace("__RAW__", "")
+        else:
+            html = tpl.replace("__ENC__", "null").replace("__RAW__", raw)
         with open(name, "w", encoding="utf-8") as f:
             f.write(html)
         pages[name] = html
