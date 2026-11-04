@@ -21,8 +21,212 @@ main{max-width:900px;margin:-37px auto 35px;padding:0 15px;position:relative;z-i
 <div class="results-head"><h2>لیستی نرخەکان</h2><span class="count" id="count">0 ئەنجام</span></div><div id="results"><div class="empty">بۆ بینینی نرخەکان، سەرەتا مۆدێلی ئایفۆن هەڵبژێرە</div></div>
 <section class="panel legend"><details><summary>ڕوونکردنەوەی کۆدی سیمەکان</summary><div class="legend-grid"><div class="legend-item"><b>ALL / JA-LLA</b>eSIM</div><div class="legend-item"><b>AC / NO</b>وەشانی eSIM ـی iPhone Duo</div><div class="legend-item"><b>CH</b>2 سیم</div><div class="legend-item"><b>ALL-A / ZA-A / ARABIC-A</b>1 سیم · چالاککراوە (Active)</div><div class="legend-item"><b>ALL-N / ZA-N / ARABIC-N</b>1 سیم · چالاک نەکراوە (Not Active)</div></div></details></section><div class="foot">iPhone Price Finder · کار دەکات بەبێ ئینتەرنێت<div class="credit">دروستکراوە لەلایەن <b>Hama (Ri Vaio)</b><br>Created by <b>Hama (Ri Vaio)</b></div></div></main>
 <script>
-const RAW = `iPhone 17|256GB|Black|899|JA-LLA
-iPhone 17|256GB|White|899|JA-LLA`;
+const RAW = `iPhone Air|256GB|Black|875|ALL
+iPhone Air|256GB|Gold|875|ALL
+iPhone Air|256GB|White|875|ALL
+iPhone Air|256GB|Sky Blue|875|ALL
+iPhone Air|512GB|Black|975|ALL
+iPhone Air|512GB|White|975|ALL
+iPhone Air|512GB|Gold|975|ALL
+iPhone Air|512GB|Sky Blue|975|ALL
+iPhone Air|1TB|Black|1010|ALL
+iPhone Air|1TB|White|1010|ALL
+iPhone Air|1TB|Gold|1010|ALL
+iPhone Air|1TB|Sky Blue|1010|ALL
+iPhone 17|256GB|Black|899|JA-LLA
+iPhone 17|256GB|White|899|JA-LLA
+iPhone 17|256GB|Mist Blue|899|JA-LLA
+iPhone 17|256GB|Sage|899|JA-LLA
+iPhone 17|256GB|Lavender|899|JA-LLA
+iPhone 17|256GB|Black|899|CH
+iPhone 17|256GB|White|899|CH
+iPhone 17|256GB|Sage|899|CH
+iPhone 17|256GB|Mist Blue|899|CH
+iPhone 17|256GB|Lavender|899|CH
+iPhone 17|256GB|Black|899|ALL-N
+iPhone 17|256GB|White|899|ALL-N
+iPhone 17|256GB|Mist Blue|899|ALL-N
+iPhone 17|256GB|Sage|899|ALL-N
+iPhone 17|256GB|Lavender|899|ALL-N
+iPhone 17|256GB|Black|859|ALL-A
+iPhone 17|256GB|White|859|ALL-A
+iPhone 17|256GB|Mist Blue|859|ALL-A
+iPhone 17|256GB|Sage|859|ALL-A
+iPhone 17|256GB|Lavender|859|ALL-A
+iPhone 17|512GB|Black|999|JA-LLA
+iPhone 17|512GB|White|999|JA-LLA
+iPhone 17|512GB|Mist Blue|999|JA-LLA
+iPhone 17|512GB|Sage|999|JA-LLA
+iPhone 17|512GB|Lavender|999|JA-LLA
+iPhone 17 Pro|256GB|Orange|1069|JA-LLA
+iPhone 17 Pro|256GB|Silver|1169|JA-LLA
+iPhone 17 Pro|256GB|Blue|1169|JA-LLA
+iPhone 17 Pro|256GB|Orange|1135|CH
+iPhone 17 Pro|256GB|Silver|1235|CH
+iPhone 17 Pro|256GB|Blue|1235|CH
+iPhone 17 Pro|256GB|Orange|1099|ALL-A
+iPhone 17 Pro|256GB|Blue|1199|ALL-A
+iPhone 17 Pro|256GB|Silver|1199|ALL-A
+iPhone 17 Pro|256GB|Orange|1110|ALL-N
+iPhone 17 Pro|256GB|Blue|1210|ALL-N
+iPhone 17 Pro|256GB|Silver|1210|ALL-N
+iPhone 17 Pro|512GB|Orange|1375|JA-LLA
+iPhone 17 Pro|512GB|Silver|1375|JA-LLA
+iPhone 17 Pro|512GB|Blue|1375|JA-LLA
+iPhone 17 Pro|512GB|Orange|1165|ALL-A
+iPhone 17 Pro|512GB|Silver|1345|ALL-A
+iPhone 17 Pro|512GB|Blue|1345|ALL-A
+iPhone 17 Pro|512GB|Orange|1399|ALL-N
+iPhone 17 Pro|512GB|Silver|1399|ALL-N
+iPhone 17 Pro|512GB|Blue|1399|ALL-N
+iPhone 17 Pro|1TB|Orange|1429|JA-LLA
+iPhone 17 Pro|1TB|Silver|1429|JA-LLA
+iPhone 17 Pro|1TB|Blue|1429|JA-LLA
+iPhone 17 Pro|1TB|Orange|1579|ALL-A
+iPhone 17 Pro|1TB|Silver|1579|ALL-A
+iPhone 17 Pro|1TB|Blue|1579|ALL-A
+iPhone 17 Pro|1TB|Orange|1599|ALL-N
+iPhone 17 Pro|1TB|Silver|1599|ALL-N
+iPhone 17 Pro|1TB|Blue|1599|ALL-N
+iPhone 17 Pro Max|256GB|Orange|1125|JA-LLA
+iPhone 17 Pro Max|256GB|Silver|1199|JA-LLA
+iPhone 17 Pro Max|256GB|Blue|1189|JA-LLA
+iPhone 17 Pro Max|256GB|Orange|1275|CH
+iPhone 17 Pro Max|256GB|Silver|1410|CH
+iPhone 17 Pro Max|256GB|Blue|1410|CH
+iPhone 17 Pro Max|256GB|Orange|1199|ZA-A
+iPhone 17 Pro Max|256GB|Silver|1335|ZA-A
+iPhone 17 Pro Max|256GB|Blue|1265|ZA-A
+iPhone 17 Pro Max|256GB|Orange|1239|ZA-N
+iPhone 17 Pro Max|256GB|Silver|1345|ZA-N
+iPhone 17 Pro Max|256GB|Blue|1275|ZA-N
+iPhone 17 Pro Max|256GB|Orange|1210|EU-N
+iPhone 17 Pro Max|256GB|Silver|1345|EU-N
+iPhone 17 Pro Max|256GB|Blue|1219|EU-N
+iPhone 17 Pro Max|256GB|Orange|1229|AR-N
+iPhone 17 Pro Max|256GB|Silver|1345|AR-N
+iPhone 17 Pro Max|256GB|Blue|1219|AR-N
+iPhone 17 Pro Max|512GB|Orange|1369|JA-LLA
+iPhone 17 Pro Max|512GB|Silver|1449|JA-LLA
+iPhone 17 Pro Max|512GB|Blue|1395|JA-LLA
+iPhone 17 Pro Max|512GB|Orange|1519|CH
+iPhone 17 Pro Max|512GB|Silver|1619|CH
+iPhone 17 Pro Max|512GB|Blue|1619|CH
+iPhone 17 Pro Max|512GB|Orange|1369|ZA-A
+iPhone 17 Pro Max|512GB|Silver|1539|ZA-A
+iPhone 17 Pro Max|512GB|Blue|1489|ZA-A
+iPhone 17 Pro Max|512GB|Orange|1469|ZA-N
+iPhone 17 Pro Max|512GB|Silver|1549|ZA-N
+iPhone 17 Pro Max|512GB|Blue|1499|ZA-N
+iPhone 17 Pro Max|512GB|Orange|1469|ARABIC-N
+iPhone 17 Pro Max|512GB|Silver|1549|ARABIC-N
+iPhone 17 Pro Max|512GB|Blue|1499|ARABIC-N
+iPhone 17 Pro Max|1TB|Orange|1519|JA-LLA
+iPhone 17 Pro Max|1TB|Silver|1589|JA-LLA
+iPhone 17 Pro Max|1TB|Blue|1539|JA-LLA
+iPhone 17 Pro Max|1TB|Orange|1625|ALL-A
+iPhone 17 Pro Max|1TB|Silver|1625|ALL-A
+iPhone 17 Pro Max|1TB|Blue|1625|ALL-A
+iPhone 17 Pro Max|1TB|Orange|1645|ALL-N
+iPhone 17 Pro Max|1TB|Silver|1645|ALL-N
+iPhone 17 Pro Max|1TB|Blue|1645|ALL-N
+iPhone 17 Pro Max|2TB|Orange|1649|JA-LLA
+iPhone 17 Pro Max|2TB|Silver|1649|JA-LLA
+iPhone 17 Pro Max|2TB|Blue|1649|JA-LLA
+iPhone 17 Pro Max|2TB|Orange|1759|ALL-A
+iPhone 17 Pro Max|2TB|Silver|1759|ALL-A
+iPhone 17 Pro Max|2TB|Blue|1759|ALL-A
+iPhone 17 Pro Max|2TB|Orange|1859|ALL-N
+iPhone 17 Pro Max|2TB|Silver|1859|ALL-N
+iPhone 17 Pro Max|2TB|Blue|1859|ALL-N
+iPhone 18 Pro|256GB|Burgundy|1319|ESIM
+iPhone 18 Pro|256GB|Glacier|1319|ESIM
+iPhone 18 Pro|256GB|Black|1319|ESIM
+iPhone 18 Pro|256GB|Silver|1279|ESIM
+iPhone 18 Pro|256GB|Burgundy|1379|ALL-A
+iPhone 18 Pro|256GB|Glacier|1355|ALL-A
+iPhone 18 Pro|256GB|Black|1379|ALL-A
+iPhone 18 Pro|256GB|Silver|1310|ALL-A
+iPhone 18 Pro|256GB|Burgundy|1389|ALL-N
+iPhone 18 Pro|256GB|Glacier|1365|ALL-N
+iPhone 18 Pro|256GB|Black|1389|ALL-N
+iPhone 18 Pro|256GB|Silver|1389|ALL-N
+iPhone 18 Pro|512GB|Burgundy|1619|ESIM
+iPhone 18 Pro|512GB|Glacier|1619|ESIM
+iPhone 18 Pro|512GB|Black|1619|ESIM
+iPhone 18 Pro|512GB|Silver|1619|ESIM
+iPhone 18 Pro|512GB|Burgundy|1599|ALL-A
+iPhone 18 Pro|512GB|Glacier|1599|ALL-A
+iPhone 18 Pro|512GB|Black|1599|ALL-A
+iPhone 18 Pro|512GB|Silver|1599|ALL-A
+iPhone 18 Pro|512GB|Burgundy|1619|ALL-N
+iPhone 18 Pro|512GB|Glacier|1619|ALL-N
+iPhone 18 Pro|512GB|Black|1619|ALL-N
+iPhone 18 Pro|512GB|Silver|1619|ALL-N
+iPhone 18 Pro|1TB|Burgundy|2149|ESIM
+iPhone 18 Pro|1TB|Glacier|2149|ESIM
+iPhone 18 Pro|1TB|Black|2149|ESIM
+iPhone 18 Pro|1TB|Silver|2149|ESIM
+iPhone 18 Pro|1TB|Burgundy|2149|ALL-N
+iPhone 18 Pro|1TB|Glacier|2149|ALL-N
+iPhone 18 Pro|1TB|Black|2149|ALL-N
+iPhone 18 Pro|1TB|Silver|2149|ALL-N
+iPhone 18 Pro Max|256GB|Burgundy|1399|ESIM
+iPhone 18 Pro Max|256GB|Glacier|1435|ESIM
+iPhone 18 Pro Max|256GB|Black|1415|ESIM
+iPhone 18 Pro Max|256GB|Silver|1415|ESIM
+iPhone 18 Pro Max|256GB|Burgundy|1659|CH
+iPhone 18 Pro Max|256GB|Glacier|1659|CH
+iPhone 18 Pro Max|256GB|Black|1599|CH
+iPhone 18 Pro Max|256GB|Silver|1549|CH
+iPhone 18 Pro Max|256GB|Burgundy|1525|ALL-A
+iPhone 18 Pro Max|256GB|Glacier|1485|ALL-A
+iPhone 18 Pro Max|256GB|Black|1439|ALL-A
+iPhone 18 Pro Max|256GB|Silver|1439|ALL-A
+iPhone 18 Pro Max|256GB|Burgundy|1535|ALL-N
+iPhone 18 Pro Max|256GB|Glacier|1495|ALL-N
+iPhone 18 Pro Max|256GB|Black|1449|ALL-N
+iPhone 18 Pro Max|256GB|Silver|1449|ALL-N
+iPhone 18 Pro Max|512GB|Burgundy|1635|ESIM
+iPhone 18 Pro Max|512GB|Glacier|1635|ESIM
+iPhone 18 Pro Max|512GB|Black|1635|ESIM
+iPhone 18 Pro Max|512GB|Silver|1635|ESIM
+iPhone 18 Pro Max|512GB|Burgundy|1729|ALL-A
+iPhone 18 Pro Max|512GB|Glacier|1729|ALL-A
+iPhone 18 Pro Max|512GB|Black|1710|ALL-A
+iPhone 18 Pro Max|512GB|Silver|1710|ALL-A
+iPhone 18 Pro Max|512GB|Burgundy|1739|ALL-N
+iPhone 18 Pro Max|512GB|Glacier|1739|ALL-N
+iPhone 18 Pro Max|512GB|Black|1719|ALL-N
+iPhone 18 Pro Max|512GB|Silver|1719|ALL-N
+iPhone 18 Pro Max|1TB|Burgundy|2419|ESIM
+iPhone 18 Pro Max|1TB|Glacier|2319|ESIM
+iPhone 18 Pro Max|1TB|Black|2319|ESIM
+iPhone 18 Pro Max|1TB|Silver|2319|ESIM
+iPhone 18 Pro Max|1TB|Burgundy|2329|ALL-A
+iPhone 18 Pro Max|1TB|Glacier|2229|ALL-A
+iPhone 18 Pro Max|1TB|Black|2229|ALL-A
+iPhone 18 Pro Max|1TB|Silver|2229|ALL-A
+iPhone 18 Pro Max|1TB|Burgundy|2429|ALL-N
+iPhone 18 Pro Max|1TB|Glacier|2329|ALL-N
+iPhone 18 Pro Max|1TB|Black|2329|ALL-N
+iPhone 18 Pro Max|1TB|Silver|2329|ALL-N
+iPhone 18 Pro Max|2TB|Burgundy|3399|ALL-A
+iPhone 18 Pro Max|2TB|Glacier|3399|ALL-A
+iPhone 18 Pro Max|2TB|Black|3399|ALL-A
+iPhone 18 Pro Max|2TB|Silver|3399|ALL-A
+iPhone 18 Pro Max|2TB|Burgundy|3499|ALL-N
+iPhone 18 Pro Max|2TB|Glacier|3499|ALL-N
+iPhone 18 Pro Max|2TB|Black|3499|ALL-N
+iPhone 18 Pro Max|2TB|Silver|3499|ALL-N
+iPhone Duo|256GB|Star White|2325|AC
+iPhone Duo|256GB|Night Sky|2349|AC
+iPhone Duo|512GB|Star White|2525|AC
+iPhone Duo|512GB|Night Sky|2549|AC
+iPhone Duo|1TB|Star White|3889|NO
+iPhone Duo|1TB|Night Sky|3889|NO
+iPhone Duo|2TB|Star White|4389|NO
+iPhone Duo|2TB|Night Sky|4389|NO`;
 const DATA=RAW.split("\n").filter(Boolean).map((line,i)=>{const [model,storage,color,price,code,...extra]=line.split("|");return {id:i,model,storage,color,price:Number(price),code,note:extra.join("|")};});
 const $=id=>document.getElementById(id);
 const MODELS=[...new Set(DATA.map(x=>x.model))];
