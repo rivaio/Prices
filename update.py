@@ -9,7 +9,10 @@ MIN_AGE = 90  # wait until the newest message is 90 seconds old, so a long list 
 
 
 def main():
-    ups = requests.get(f"{API}/getUpdates", params={"timeout": 0, "limit": 100}, timeout=30).json().get("result", [])
+    r = requests.get(f"{API}/getUpdates", params={"timeout": 0, "limit": 100}, timeout=30).json()
+    if not r.get("ok"):
+        raise SystemExit(f"TELEGRAM ERROR: {r.get('error_code')} {r.get('description')} (check the BOT_TOKEN secret, or stop other bots using this token)")
+    ups = r.get("result", [])
     if not ups:
         print("no new messages"); return
     msgs = []
