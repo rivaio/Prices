@@ -10,7 +10,15 @@ header{background:linear-gradient(125deg,#155bd0,#247fe9 60%,#5aa9ff);color:#fff
 main{max-width:900px;margin:-37px auto 35px;padding:0 15px;position:relative;z-index:2}.panel{background:var(--paper);border:1px solid #eaf0f8;border-radius:24px;padding:20px;box-shadow:var(--shadow)}.section-title{font-size:15px;font-weight:900;margin:0 0 16px;display:flex;align-items:center;gap:8px}.section-title .num{width:27px;height:27px;border-radius:9px;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-size:13px}.filters{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-size:12px;color:#5d6d86;font-weight:850;margin:0 0 8px}.field select{width:100%;height:51px;border:1.5px solid #dfe7f2;border-radius:15px;padding:0 14px;background:#fbfcff;color:var(--ink);font-size:14px;font-weight:700;outline:none}.field select:focus{border-color:#75a8f5;box-shadow:0 0 0 4px #1769e817;background:#fff}.field select:disabled{background:#f1f4f9;color:#9ba6b7}.stats{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.stat{background:#f5f8fd;border:1px solid #edf1f7;border-radius:12px;padding:8px 12px;font-size:11px;color:#687991}.stat b{color:#1b2b46;font-size:14px;margin-left:5px;font-variant-numeric:tabular-nums}.results-head{display:flex;justify-content:space-between;align-items:center;margin:23px 3px 12px}.results-head h2{font-size:16px;margin:0;font-weight:900}.count{font-size:11px;color:#52647f;background:#e9f1fc;padding:6px 11px;border-radius:20px}.group{margin-bottom:13px;background:#fff;border:1px solid #e6edf6;border-radius:18px;overflow:hidden;box-shadow:0 7px 24px #1e2d5008}.group-title{padding:13px 16px;background:linear-gradient(90deg,#f0f6ff,#fbfdff);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.model{font-size:14px;font-weight:900}.storage{font-size:11px;color:#145fc9;background:#e5f0ff;padding:6px 10px;border-radius:9px;font-weight:900}.item{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #f0f3f8}.item:last-child{border-bottom:0}.color{font-size:13px;font-weight:750}.code{font-size:10px;font-weight:900;padding:7px 10px;border-radius:9px;background:#f0f2f7;color:#526078;direction:ltr;white-space:nowrap}.code.active{background:var(--greenbg);color:var(--green)}.code.inactive{background:var(--redbg);color:var(--red)}.code.esim{background:#eeedff;color:var(--purple)}.code.dual{background:#eaf3ff;color:#2863a8}.price{font-size:16px;font-weight:950;direction:ltr;white-space:nowrap;font-variant-numeric:tabular-nums}.price.na{font-size:11px;color:#a66a13}.note{font-size:10px;color:#a66a13;display:block;text-align:right;margin-top:3px}.empty{text-align:center;padding:36px 15px;color:var(--muted);background:#fff;border-radius:18px;border:1px dashed #cbd6e5;line-height:2}.legend{margin-top:15px}.legend summary{cursor:pointer;font-size:12px;font-weight:900;color:#424f66;padding:3px}.legend-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:13px}.legend-item{background:#f7f9fd;border:1px solid #edf1f7;border-radius:12px;padding:11px;font-size:11px;color:#687991;line-height:1.7}.legend-item b{display:block;color:#25334b;direction:ltr;text-align:right;margin-bottom:3px}.foot{text-align:center;color:#929fb2;font-size:10px;padding:22px 8px 5px}.reset{margin-top:13px;border:0;background:#f0f5fc;color:#426080;border-radius:11px;padding:9px 13px;font-size:11px;font-weight:800;cursor:pointer}
 @media(max-width:520px){header{padding:21px 16px 58px}.hero h1{font-size:22px}.panel{padding:15px;border-radius:20px}.filters{grid-template-columns:1fr;gap:11px}.field select{height:48px}.item{grid-template-columns:minmax(0,1fr) auto;gap:7px;padding:12px}.color{grid-column:1;grid-row:1}.price{grid-column:2;grid-row:1}.code{grid-column:1/-1;grid-row:2;justify-self:start}.legend-grid{grid-template-columns:1fr 1fr}}
 .credit{margin-top:10px;line-height:1.9;color:#145fc9;font-size:12px;font-weight:600}.credit b{font-weight:900}
-</style></head><body>
+body.locked header,body.locked main{display:none}
+#lock{position:fixed;inset:0;z-index:99;background:var(--bg);display:grid;place-items:center;padding:20px}
+#lockForm{width:100%;max-width:340px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;text-align:center;box-shadow:var(--shadow)}
+#lockForm h2{margin:6px 0 4px;font-size:18px}#lockForm p{margin:0 0 16px;color:var(--muted);font-size:13px}.lk-ico{font-size:34px}
+#lockForm input{width:100%;height:48px;border:1.5px solid #dfe7f2;border-radius:14px;padding:0 14px;font-size:15px;text-align:center;direction:ltr;outline:none}
+#lockForm button{width:100%;height:48px;margin-top:12px;border:0;border-radius:14px;background:var(--blue);color:#fff;font-size:15px;font-weight:800;cursor:pointer}
+#lockErr{color:var(--red);font-size:13px;min-height:18px;margin-top:10px}
+</style></head><body class="locked">
+<div id="lock"><form id="lockForm"><div class="lk-ico">🔒</div><h2>تەنها بۆ بەڕێوەبەران</h2><p>وشەی نهێنی بنووسە</p><input id="lockPw" type="password" autocomplete="current-password" placeholder="وشەی نهێنی" required><button type="submit">کردنەوە</button><div id="lockErr"></div></form></div>
 <header><div class="wrap"><div class="top"><div class="logo"></div><div><div class="brand">iPhone Price Finder</div><div class="sub">Offline price catalogue · USD</div></div></div><div class="hero"><h1>نرخی ئایفۆن بە خێرایی بدۆزەرەوە</h1><p>مۆدێل، بیرگە، جۆری سیم و ڕەنگ هەڵبژێرە</p></div></div></header>
 <main><section class="panel"><h2 class="section-title"><span class="num">١</span> مۆدێلی ئایفۆن هەڵبژێرە</h2><div class="filters">
 <div class="field"><label for="modelSelect">مۆدێل</label><select id="modelSelect"><option value="">مۆدێل هەڵبژێرە</option></select></div>
@@ -21,212 +29,9 @@ main{max-width:900px;margin:-37px auto 35px;padding:0 15px;position:relative;z-i
 <div class="results-head"><h2>لیستی نرخەکان</h2><span class="count" id="count">0 ئەنجام</span></div><div id="results"><div class="empty">بۆ بینینی نرخەکان، سەرەتا مۆدێلی ئایفۆن هەڵبژێرە</div></div>
 <section class="panel legend"><details><summary>ڕوونکردنەوەی کۆدی سیمەکان</summary><div class="legend-grid"><div class="legend-item"><b>ALL / JA-LLA</b>eSIM</div><div class="legend-item"><b>AC / NO</b>وەشانی eSIM ـی iPhone Duo</div><div class="legend-item"><b>CH</b>2 سیم</div><div class="legend-item"><b>ALL-A / ZA-A / ARABIC-A</b>1 سیم · چالاککراوە (Active)</div><div class="legend-item"><b>ALL-N / ZA-N / ARABIC-N</b>1 سیم · چالاک نەکراوە (Not Active)</div></div></details></section><div class="foot">iPhone Price Finder · کار دەکات بەبێ ئینتەرنێت<div class="credit">دروستکراوە لەلایەن <b>Hama (Ri Vaio)</b><br>Created by <b>Hama (Ri Vaio)</b></div></div></main>
 <script>
-const RAW = `iPhone Air|256GB|Black|880|ALL
-iPhone Air|256GB|Gold|880|ALL
-iPhone Air|256GB|White|880|ALL
-iPhone Air|256GB|Sky Blue|880|ALL
-iPhone Air|512GB|Black|980|ALL
-iPhone Air|512GB|White|980|ALL
-iPhone Air|512GB|Gold|980|ALL
-iPhone Air|512GB|Sky Blue|980|ALL
-iPhone Air|1TB|Black|1015|ALL
-iPhone Air|1TB|White|1015|ALL
-iPhone Air|1TB|Gold|1015|ALL
-iPhone Air|1TB|Sky Blue|1015|ALL
-iPhone 17|256GB|Black|904|JA-LLA
-iPhone 17|256GB|White|904|JA-LLA
-iPhone 17|256GB|Mist Blue|904|JA-LLA
-iPhone 17|256GB|Sage|904|JA-LLA
-iPhone 17|256GB|Lavender|904|JA-LLA
-iPhone 17|256GB|Black|904|CH
-iPhone 17|256GB|White|904|CH
-iPhone 17|256GB|Sage|904|CH
-iPhone 17|256GB|Mist Blue|904|CH
-iPhone 17|256GB|Lavender|904|CH
-iPhone 17|256GB|Black|904|ALL-N
-iPhone 17|256GB|White|904|ALL-N
-iPhone 17|256GB|Mist Blue|904|ALL-N
-iPhone 17|256GB|Sage|904|ALL-N
-iPhone 17|256GB|Lavender|904|ALL-N
-iPhone 17|256GB|Black|864|ALL-A
-iPhone 17|256GB|White|864|ALL-A
-iPhone 17|256GB|Mist Blue|864|ALL-A
-iPhone 17|256GB|Sage|864|ALL-A
-iPhone 17|256GB|Lavender|864|ALL-A
-iPhone 17|512GB|Black|1004|JA-LLA
-iPhone 17|512GB|White|1004|JA-LLA
-iPhone 17|512GB|Mist Blue|1004|JA-LLA
-iPhone 17|512GB|Sage|1004|JA-LLA
-iPhone 17|512GB|Lavender|1004|JA-LLA
-iPhone 17 Pro|256GB|Orange|1074|JA-LLA
-iPhone 17 Pro|256GB|Silver|1174|JA-LLA
-iPhone 17 Pro|256GB|Blue|1174|JA-LLA
-iPhone 17 Pro|256GB|Orange|1140|CH
-iPhone 17 Pro|256GB|Silver|1240|CH
-iPhone 17 Pro|256GB|Blue|1240|CH
-iPhone 17 Pro|256GB|Orange|1104|ALL-A
-iPhone 17 Pro|256GB|Blue|1204|ALL-A
-iPhone 17 Pro|256GB|Silver|1204|ALL-A
-iPhone 17 Pro|256GB|Orange|1115|ALL-N
-iPhone 17 Pro|256GB|Blue|1215|ALL-N
-iPhone 17 Pro|256GB|Silver|1215|ALL-N
-iPhone 17 Pro|512GB|Orange|1380|JA-LLA
-iPhone 17 Pro|512GB|Silver|1380|JA-LLA
-iPhone 17 Pro|512GB|Blue|1380|JA-LLA
-iPhone 17 Pro|512GB|Orange|1170|ALL-A
-iPhone 17 Pro|512GB|Silver|1350|ALL-A
-iPhone 17 Pro|512GB|Blue|1350|ALL-A
-iPhone 17 Pro|512GB|Orange|1404|ALL-N
-iPhone 17 Pro|512GB|Silver|1404|ALL-N
-iPhone 17 Pro|512GB|Blue|1404|ALL-N
-iPhone 17 Pro|1TB|Orange|1434|JA-LLA
-iPhone 17 Pro|1TB|Silver|1434|JA-LLA
-iPhone 17 Pro|1TB|Blue|1434|JA-LLA
-iPhone 17 Pro|1TB|Orange|1584|ALL-A
-iPhone 17 Pro|1TB|Silver|1584|ALL-A
-iPhone 17 Pro|1TB|Blue|1584|ALL-A
-iPhone 17 Pro|1TB|Orange|1604|ALL-N
-iPhone 17 Pro|1TB|Silver|1604|ALL-N
-iPhone 17 Pro|1TB|Blue|1604|ALL-N
-iPhone 17 Pro Max|256GB|Orange|1130|JA-LLA
-iPhone 17 Pro Max|256GB|Silver|1204|JA-LLA
-iPhone 17 Pro Max|256GB|Blue|1194|JA-LLA
-iPhone 17 Pro Max|256GB|Orange|1280|CH
-iPhone 17 Pro Max|256GB|Silver|1415|CH
-iPhone 17 Pro Max|256GB|Blue|1415|CH
-iPhone 17 Pro Max|256GB|Orange|1204|ZA-A
-iPhone 17 Pro Max|256GB|Silver|1340|ZA-A
-iPhone 17 Pro Max|256GB|Blue|1270|ZA-A
-iPhone 17 Pro Max|256GB|Orange|1244|ZA-N
-iPhone 17 Pro Max|256GB|Silver|1350|ZA-N
-iPhone 17 Pro Max|256GB|Blue|1280|ZA-N
-iPhone 17 Pro Max|256GB|Orange|1215|EU-N
-iPhone 17 Pro Max|256GB|Silver|1350|EU-N
-iPhone 17 Pro Max|256GB|Blue|1224|EU-N
-iPhone 17 Pro Max|256GB|Orange|1234|AR-N
-iPhone 17 Pro Max|256GB|Silver|1350|AR-N
-iPhone 17 Pro Max|256GB|Blue|1224|AR-N
-iPhone 17 Pro Max|512GB|Orange|1374|JA-LLA
-iPhone 17 Pro Max|512GB|Silver|1454|JA-LLA
-iPhone 17 Pro Max|512GB|Blue|1400|JA-LLA
-iPhone 17 Pro Max|512GB|Orange|1524|CH
-iPhone 17 Pro Max|512GB|Silver|1624|CH
-iPhone 17 Pro Max|512GB|Blue|1624|CH
-iPhone 17 Pro Max|512GB|Orange|1374|ZA-A
-iPhone 17 Pro Max|512GB|Silver|1544|ZA-A
-iPhone 17 Pro Max|512GB|Blue|1494|ZA-A
-iPhone 17 Pro Max|512GB|Orange|1474|ZA-N
-iPhone 17 Pro Max|512GB|Silver|1554|ZA-N
-iPhone 17 Pro Max|512GB|Blue|1504|ZA-N
-iPhone 17 Pro Max|512GB|Orange|1474|ARABIC-N
-iPhone 17 Pro Max|512GB|Silver|1554|ARABIC-N
-iPhone 17 Pro Max|512GB|Blue|1504|ARABIC-N
-iPhone 17 Pro Max|1TB|Orange|1524|JA-LLA
-iPhone 17 Pro Max|1TB|Silver|1594|JA-LLA
-iPhone 17 Pro Max|1TB|Blue|1544|JA-LLA
-iPhone 17 Pro Max|1TB|Orange|1630|ALL-A
-iPhone 17 Pro Max|1TB|Silver|1630|ALL-A
-iPhone 17 Pro Max|1TB|Blue|1630|ALL-A
-iPhone 17 Pro Max|1TB|Orange|1650|ALL-N
-iPhone 17 Pro Max|1TB|Silver|1650|ALL-N
-iPhone 17 Pro Max|1TB|Blue|1650|ALL-N
-iPhone 17 Pro Max|2TB|Orange|1654|JA-LLA
-iPhone 17 Pro Max|2TB|Silver|1654|JA-LLA
-iPhone 17 Pro Max|2TB|Blue|1654|JA-LLA
-iPhone 17 Pro Max|2TB|Orange|1764|ALL-A
-iPhone 17 Pro Max|2TB|Silver|1764|ALL-A
-iPhone 17 Pro Max|2TB|Blue|1764|ALL-A
-iPhone 17 Pro Max|2TB|Orange|1864|ALL-N
-iPhone 17 Pro Max|2TB|Silver|1864|ALL-N
-iPhone 17 Pro Max|2TB|Blue|1864|ALL-N
-iPhone 18 Pro|256GB|Burgundy|1324|ESIM
-iPhone 18 Pro|256GB|Glacier|1324|ESIM
-iPhone 18 Pro|256GB|Black|1324|ESIM
-iPhone 18 Pro|256GB|Silver|1284|ESIM
-iPhone 18 Pro|256GB|Burgundy|1384|ALL-A
-iPhone 18 Pro|256GB|Glacier|1360|ALL-A
-iPhone 18 Pro|256GB|Black|1384|ALL-A
-iPhone 18 Pro|256GB|Silver|1315|ALL-A
-iPhone 18 Pro|256GB|Burgundy|1394|ALL-N
-iPhone 18 Pro|256GB|Glacier|1370|ALL-N
-iPhone 18 Pro|256GB|Black|1394|ALL-N
-iPhone 18 Pro|256GB|Silver|1394|ALL-N
-iPhone 18 Pro|512GB|Burgundy|1624|ESIM
-iPhone 18 Pro|512GB|Glacier|1624|ESIM
-iPhone 18 Pro|512GB|Black|1624|ESIM
-iPhone 18 Pro|512GB|Silver|1624|ESIM
-iPhone 18 Pro|512GB|Burgundy|1604|ALL-A
-iPhone 18 Pro|512GB|Glacier|1604|ALL-A
-iPhone 18 Pro|512GB|Black|1604|ALL-A
-iPhone 18 Pro|512GB|Silver|1604|ALL-A
-iPhone 18 Pro|512GB|Burgundy|1624|ALL-N
-iPhone 18 Pro|512GB|Glacier|1624|ALL-N
-iPhone 18 Pro|512GB|Black|1624|ALL-N
-iPhone 18 Pro|512GB|Silver|1624|ALL-N
-iPhone 18 Pro|1TB|Burgundy|2154|ESIM
-iPhone 18 Pro|1TB|Glacier|2154|ESIM
-iPhone 18 Pro|1TB|Black|2154|ESIM
-iPhone 18 Pro|1TB|Silver|2154|ESIM
-iPhone 18 Pro|1TB|Burgundy|2154|ALL-N
-iPhone 18 Pro|1TB|Glacier|2154|ALL-N
-iPhone 18 Pro|1TB|Black|2154|ALL-N
-iPhone 18 Pro|1TB|Silver|2154|ALL-N
-iPhone 18 Pro Max|256GB|Burgundy|1404|ESIM
-iPhone 18 Pro Max|256GB|Glacier|1440|ESIM
-iPhone 18 Pro Max|256GB|Black|1420|ESIM
-iPhone 18 Pro Max|256GB|Silver|1420|ESIM
-iPhone 18 Pro Max|256GB|Burgundy|1664|CH
-iPhone 18 Pro Max|256GB|Glacier|1664|CH
-iPhone 18 Pro Max|256GB|Black|1604|CH
-iPhone 18 Pro Max|256GB|Silver|1554|CH
-iPhone 18 Pro Max|256GB|Burgundy|1530|ALL-A
-iPhone 18 Pro Max|256GB|Glacier|1490|ALL-A
-iPhone 18 Pro Max|256GB|Black|1444|ALL-A
-iPhone 18 Pro Max|256GB|Silver|1444|ALL-A
-iPhone 18 Pro Max|256GB|Burgundy|1540|ALL-N
-iPhone 18 Pro Max|256GB|Glacier|1500|ALL-N
-iPhone 18 Pro Max|256GB|Black|1454|ALL-N
-iPhone 18 Pro Max|256GB|Silver|1454|ALL-N
-iPhone 18 Pro Max|512GB|Burgundy|1640|ESIM
-iPhone 18 Pro Max|512GB|Glacier|1640|ESIM
-iPhone 18 Pro Max|512GB|Black|1640|ESIM
-iPhone 18 Pro Max|512GB|Silver|1640|ESIM
-iPhone 18 Pro Max|512GB|Burgundy|1734|ALL-A
-iPhone 18 Pro Max|512GB|Glacier|1734|ALL-A
-iPhone 18 Pro Max|512GB|Black|1715|ALL-A
-iPhone 18 Pro Max|512GB|Silver|1715|ALL-A
-iPhone 18 Pro Max|512GB|Burgundy|1744|ALL-N
-iPhone 18 Pro Max|512GB|Glacier|1744|ALL-N
-iPhone 18 Pro Max|512GB|Black|1724|ALL-N
-iPhone 18 Pro Max|512GB|Silver|1724|ALL-N
-iPhone 18 Pro Max|1TB|Burgundy|2424|ESIM
-iPhone 18 Pro Max|1TB|Glacier|2324|ESIM
-iPhone 18 Pro Max|1TB|Black|2324|ESIM
-iPhone 18 Pro Max|1TB|Silver|2324|ESIM
-iPhone 18 Pro Max|1TB|Burgundy|2334|ALL-A
-iPhone 18 Pro Max|1TB|Glacier|2234|ALL-A
-iPhone 18 Pro Max|1TB|Black|2234|ALL-A
-iPhone 18 Pro Max|1TB|Silver|2234|ALL-A
-iPhone 18 Pro Max|1TB|Burgundy|2434|ALL-N
-iPhone 18 Pro Max|1TB|Glacier|2334|ALL-N
-iPhone 18 Pro Max|1TB|Black|2334|ALL-N
-iPhone 18 Pro Max|1TB|Silver|2334|ALL-N
-iPhone 18 Pro Max|2TB|Burgundy|3404|ALL-A
-iPhone 18 Pro Max|2TB|Glacier|3404|ALL-A
-iPhone 18 Pro Max|2TB|Black|3404|ALL-A
-iPhone 18 Pro Max|2TB|Silver|3404|ALL-A
-iPhone 18 Pro Max|2TB|Burgundy|3504|ALL-N
-iPhone 18 Pro Max|2TB|Glacier|3504|ALL-N
-iPhone 18 Pro Max|2TB|Black|3504|ALL-N
-iPhone 18 Pro Max|2TB|Silver|3504|ALL-N
-iPhone Duo|256GB|Star White|2330|AC
-iPhone Duo|256GB|Night Sky|2354|AC
-iPhone Duo|512GB|Star White|2530|AC
-iPhone Duo|512GB|Night Sky|2554|AC
-iPhone Duo|1TB|Star White|3894|NO
-iPhone Duo|1TB|Night Sky|3894|NO
-iPhone Duo|2TB|Star White|4394|NO
-iPhone Duo|2TB|Night Sky|4394|NO`;
+const ENC={"s": "yjXffVgW+UP59lc2dVtWzg==", "v": "NsGshH/WM9HNTeyB", "c": "trj+46wc+NDnO72QYx0kpF2eznfVq+zHRFC8/8ZyZpP5zbtAqGCiDCrXmqv8db8dJUCzNJT5MbhVchvyhb4Xm/hn5cQegoewkEJdIuIE8svivlpWfBr2qUD3mpZbPsw/jpMRplf+k3Fu/N6I2BR2WPAP1+WA2vXf1hZZfYR+fx8vms02UNzXloDbKxyrkIIEKhMO3rxZfFsUeJ9LZ9G2sOlZ2YnpOaFHJsMcL7vVOfcO7o9PufGFVpUWsN7IIiCDBO8uxIcEgHI3LYc9/CA6uE5AInuoKNlAq4EOL1FsyQCXFrGfY0JMeAL4OwODZDwVsKjl8yW4d9kjrotu+A4RNHjZFhTbSq73dUnwkAn0kLA9WAh563+LJlqt5ayUkqRVpDnv2rUOO1kUB2WKULBfk7lyJfc5k75BWV8feRhwsxADfWsNAF4PQqNcwOgwD5B4YHtW02kdotS5rtIq9bJv444J7hOIn105nwiJMP4AZtiwzgsFGFcs1kueUltLUOGIc80qAsAPseofrP9iqJLGsRXhz0O9Xa0nNSERdc1le4TpMaT0coz1yO0XqAO/PmYCWMDg1xhBM4KSYGiVdq85sW1c01eMGpiwLgN9uKpb7sYmsA6ToDl+bozytZipN8WKrhsriaQh7+5qpQvDN5C7g6nHwWhF4SQ4tZ68euRvOegFnv5CPb3poiN1WB7MN7jmw523aYGtNmKTIaA+qHnYLsqyn9SlHlvDLVGlv9xztIfS0yD1lT37tksepeIIFamc6zikN0Qk3nJRGiTbEAJQnAKtGQuDXG373YqSPU44jygnkOYPAKuMBtAXLYI3T7bA5EMwC6JUS4Rdh0SF2PXzcT4w2sgpas4InN+UIe2eUTK3ls9qcK+e8WtonPhsW++oulXrlYmphji1+YKjMRxi50AKYqAL4IGshNhHfMllRV/6868LU4gNk6D2hzMajsU0JgUFkxPO+TqNKyoVC0udbFDbRkUWWT9rtO6poutHjNigVub+s8AG098qJeutuvsoN7XGY0Jb0u5Yhmy+pGytfhudGGilzY9+ZF5j5+YqnCCyn4yrXkzloQBdUuFq4A0cBhpJb/sWtQrNVuqmYuigFwqJfBirpvEFhh9AuAxhOXo3zm0rbPRG6iKzuWRRrdoW4KuxbKBVEv7BU+R5T0aLTy5t65dBLMOi66bk6iPjggZ7751DHWPvO7bCZs41MPBPCDZkSNQ8sjFLXqlTzdkbpJoSZUDtsdQM9mvvHpAxVg61s+FhwNVpH9ZwTDXS47FyC6IRXD/Dqu8sgXd4behAp0AB+HlB8F2FSWtnTtr+iOwFObLxRbh2s3yG1Y+rg7AdtFSN3eHmIkQj+flLv1BHMaSGveSu1yX2SFYher51dwN81OLPAY3U5HrCZu6EBB4q5596UkvCxhhXQwJVH3qhtO7ab0f+zocSrTysCAQgR4Hq8w7r2Q1LysTBRAOcMLwY8wUBufHBF3Pwel/fLBtMHKy6qG+jh77utD5JmJJulnneL+P3mZXFkdxq1n7WAH366Fd857URwetEe6yPW4JZDSxgv3SmOdAeJskXq/q6frtL6n/zpovtN4lCHE6NQMRKng36zuR83Y1W/cmYaGqDsCI0ie/k5q3mA1HVn//0EcWwpr8v7OT2NYZvohjM+offXzVaPndG4Cvt+w+XyGlurqUN5pdlw6OKi+Xbi2GOgLZ5Vfe8+TwlkLFN+6tNMyeoBwp54DnXP2isggan1df+8BLlHZqACPnEuzsSSnEqo1OTVxkpTYan1ZsOwr6qNGCgB6/QmYzKsxTy6Wl27w7xR0Fu2/I5WTzMjkUdycWsgq3GJmpbY+IpIANjNN5FbvTMWh44UmRFE5UhvY0n8P5WixEKwPByGBeK0EigCWeH7oYiNEMrOoRSLymQTlD3b31OhSD5MxxLAtbsWjLbmPCPdc9iaJuUTjnzBUe6CDW9iHGsbZJU1r7ysGS5rH2J6qs4l+UIhs7NFPieNX3x1cHtoQ3IUgfennVnYY0oOSawmaif8fNDP6+HJbvGxs7/XBZm5ViEKeqD7YYrAPFg4U7rKX4uocIVJooqys1H5ObRIqK9BVl2GoOaT7NTC4U8fYRFbSt6u7boaBPQA/uo/0C7Xd7zjMQPAsMGivBMDxNL0oqp4lASgr2ZxB4cpUWDzqrZ/gQf/wrYAD2PlgAG+a08CkBMBnfU/j3JggR1EQqxUqk3LJfZRK+qqOOgDHu/L4NoUYljpw/84kHiRQlPb7LsgiK3p5PywTYPjx64fZ9X4Mgjs67AisAGexH+hffR2dPWGasioncpDP1sKZgi4vDZKZtvZILBiJ0YWPfpit4VJU2IFyt5tUBkaKpNNreOb2SEcRs7oHBXjdsN+pmB7HyAN3UTRwWIPCV9/3fI+UlOc13H8npsxjad87cyysS0qnTpMPihCE36RMeJUd289U4ugEzWEozMd//8K3XoCYFFyJjUfMhpprBQ4Ofgyn5Ltrls/WldsJNbSqPa9Yi+3TG28kWoTvj2ANbCGggm/HXhwknOgvaoJCvPHXvY9HEnOKDXD1UW0Wird0qOqXYS6Pga29DM3Em8USo4RLUpDAeI7Vq7/29kr1uQ7P6kDXkY2k/nEvijXg+TW/P+AL3NjtwVxpuAyCTU0TzP9ED3RKE5RplWzHXBIbojb+phSxKllAbcHm+I7rMMmQEtBPJW4YwsqICPVWAM2qdCo5MecTXMZA7/7Zt0h2Kh4t+ubtvC4MR/5gXU09P6c/W3VTYQjpg47tg7ksJ4WOJqKXi/4K7Ooj3mfhxeNRb6ZRBm+0CxsUNYXzOcCrH9oPyKg2r6avzfK0wYg3FVLE2FsLwyfR+ZB/VflVRBp7R0+DYjDTE7agdgvV5rf+57SP2i9GOYu0Av4dfgqxuSWrza7VtKVUN3T2RvbladkKQG0g9M/HFDgbJCom66npRgINRv5Gtp/iYO4s6WKM0uAiRMLgdQuHOsjZbqjqg+SAcg2kPbAenOMdNVxUaDL9aogxVLde7BPcRRglBSKTE2AOeSSd/VZcwmqF5KWlqVAYdbYKamKM5du6nxWc4On8Y9/GMkc1FqpLagDGZtj0QhctW7g1biIH/2++pHWqXLSplzxdZWL+OveCgMWdvjUeiWcprZoYQnm62G6CymfFusaXsVEr8PDxxrUvSmJLu9FkxHUiAMweJ9buIXdkU4yuB4Q0byqDhvA3RSIpQJ6B+l7GIsanyENmO20xif9x39VMYz362q5FOjD0JZRpDmzmjptc558W3ZKFruUSltMzKdeA7HxLQFCO+aZUpKecIpPGsOcqoQiU/FJuZV6K8xS8cvMlFFJ++CQfNgqRfedpJdl9hK0LLYmyiiWLFn8euAisNo0K+C/dik1GEqoX4ouR6lNXFIPC5tnwvevoSnxhwjiN0umjrHGPOUjlSNy2lqeYpeQXAmxZ6uk337ISAlP7LtVg3QEa72zRZmiHcEQZuT9RnNu/+wbIDiui3085tyrB8MeAiv224iR5W4MscDqTmfwQeOKQwGy72ExIbedU+TMOK2gnu4zzlEI2/jTtmOZcRZj1kXBdsDJ0yE27LbqJIeH9RpkLRJt3rEFDmxWQqJ58RSY7D+eyoAmrsLetyCAbApgvrzDC/7nstv2tm5HiEz6aUNYiNceC5IV9uR9yYt2Q/vybj0g4w++FeWbZQ7QfWj59Ib678RXeV/QUFc3dDSWAyre2QDpu84tY+YvaCif7XJBIILXJ8E5TRqWiakmsh10Erhq6A2HRdQBAvwaa30WxG4OsU+Upbn4TOFequlsemrpL32vzGIShf/qApjS4Q0BCmJHK/cZRPTynrMG7C+7AZRqVuqvxq/lr13w5Hj5lgcUddJ0KRQcCuSNyRDEDBoK6ihHPgEJFePThlvPXvs8RfshWE4xjUpWlFcWtiWI6X3Ey3TZI8eMGHcGvBKAFUsiAnYYZxBWUXzhw7SkNFAgQwzmhHcBTqdewc/lXj2himXxmTlfc3MK+P5f+f56n7dg51aa95/ej6dmgTw8xfWZ0xlfv5DkIYD6veQ5uexxFI3hKvl18sQVIOAuWTSa76sxrm/jNlDSgAPOqW+iu65TyNXXg2K4nq2E8e6DqaQK71Bp/pTBmk9Pm8ylajwNpOmBRuGFHfaA0Pw+ebIjWNfs72PZl0zQ85KO0lssTZaukQmbiipMO2nMMj1va3ifhbmq+8Q5hXgEI7Wtm33kzdlocUNyEvePey70Grsc7ZA/7FhIxijTRhiTHhrb4pxv2xaOxDBDMAjSen2fy8SR1BX7tn9mE9z+oO+54T5uN7W3aDAOCGjeQI9O3rII3Fovy17z+mAmZGEjWpais226MozopzWJ1hHGTnX18lyIgjrVII3uHtnMGFGHU5++GMGh5+Q1Pm6YdfuI2iQlI8my5An9HNKZYHvKF1nIPgAU5pch8tnY7yKysb9nTzC/HdLnZaRtKV0ku7r16LnoS1sgmtyo6Q3vqmLU3e10M+wsIYTZuJcp91MqbttMTSSya1g2kKQRtl66bnmO2ohtRTApqbcRWwAw9PvsycKs/aDzk4jY5Fwq8TbTguI6ZSuxjeSNXiQjQxjBGSNloBmiem6tFlVxZev5uefvZ+i5Ar+YRm/4YMB85radTTl18YjSNV5NBtyro5eek6ByL/Haj84w4W+mqanVW6xUuyuYBARirabZTwZ4IzvAC1Vm147xntB12btxrRFQSjtdgICTLMDP0jQtcLo82PSvouBEYIszMZ/8D1PTatf6HEad+IDIJX2eynWFTRwWAaPYDy+B+Z6Mk183TvZGqCcfn9eef8KGUt5524MT4iGv3uDsrPCdbSfn7JmUNSZHf4OoZWEh1X0dvFsiUNv/J8rJkHeUxzfRXlM0h3ESBjMzk+j7w93bDNyHiECvWzZqtpak5RaGwHp7k+XsWoyECDQUjPp+Hp1tO/v9DJkW75SDy3jY3fXStXb8DZcn4C2lvGAOGIEcx+QW9Z2emAsUjw/Xi+O6n7IdELWev6N7Yk0mMRhMVIXRblqRg+FvRzhVpi2T/1boY1CvvKN5kWIOHywKjr2k/8C1P+MP+D9RgVVWkWpJuC8OjkIHiLYTKeu3bg8Tz/F2NhZ6db5jNH6Wc+iLiKN8fXEsywOHCU0QquoGUoDIk9q44Y39asC0bE0GGRrvuxppCYJCpsj/Q1jaiRZn+LjenXvtXpVmInkwTI5YMTKBGtU7fn2TYk9o5NXhZS0YvKgnfjY/GIKEJ33gceMtKByfJ0C5mXjuhMoZWaf01sqybIbUnPhH4qU/mKaTRm2xhZ8rsHhyQYoTKVbWsMyMG9iKi6GVkGNGlKfyqUFJTE4TghS/+2AD9xTNVOqoQ9gxWDT4jboshZH5idxfHSGqSu7kio5vfx1/HKYyUowTs2HycWXCE9qs2iOFjrTOyQ1JMl7qUK7YJEPvGmD5Moe1gJbOU1oQfLWLAX3qudsBy9upsAGGb9Lg8a7BTr5NgH8Xy/wKhesuGZNGhM1ZJoIaIIjrFHeyf/X5ABP6UGqWZWRJ/BnsbmGQy6Njs7UYUT0XbJL892UoILaa/EkwW4YgQGUbQrAaHGUyEiF0qkzv8l0IzUQes+Z07+XFahE8lYlR813vjaRDkKspMnm7GU05ov3NIPVR1DuzWKTEcNdq1RzFdmEegbR4m3HCRBZLMA8Cm/XHz+rrrm7AhOQ8BgWneEcLco3xIiE/T+becVOoU/WlSn/VRxE0JCoeCw7oMimsQy7CbqNvl6nxNVVSwnC4GYk7aJIg+cp1Q2fy4XBwvcIihKiKmsbsBG1LCbdEWKDA70P7xeaLtyHi5pTKSpeZ4zHkzdhBkPcJrbfG9eLhXjzIG4l6/CBBhRq9c0tjSjleH7F5eobXMDib3WEkchYaemFzQgroEhXVwlN4aBpu8+mC+6IqVWpWsEQY9oDZAZ0J0idhJY4cnEeht1PN5jHwy/QhxRnVFQ97up4pdM3PkTxBgwcOCekecC04lZinz1XFk05oy8uauWdjxyMH6ZE2Bl3hgHi8O5EoLbfrs0TwIQrJprblpxihntCwMDk9TXYUuoY54mp+FUJ42Osdha4K5ahpv1Uo7zkthrc4fMcS8uQSiop2I+MbNWjEXEbhA+TXDo/iu5VUe787bu64EJN+DRCB5jRBn4Wf9Wsyllu57pvVCltPz7qzfTTWQ5/w+Q4H1uLBBLgxuwwYQPy4zipvMhzVXvwA3pSRQBG2gEloA/KFE+Ht/tQw9hZqPrZecjZkyHvxPL2FTpHsOwnYQlErGrzEqVWRXLssZH9oIc3Ct5GNWZq7SNHsLOFmUXYhG2OriS9O60t6a1D3GHHS/2k5X4T7+mmJ2VFJhL+zx5g0La2uOfiR9Di/c/dOePbAV81uB5D3pLBaSzQ2wxY2snterzltZG76Z0qjJrcglG+13LjYq33hGaP0kAJ+SLBw4RGOUzpcrLvLNcgeJPGNsfgR4X9F/4ZYkAm2IdbXKCjVOpcVpnGQ4PTlU2TINsB/SgBFlqRFJaSootZb286JdnjMA8KZpYPljxx88Bxhy+T+bb9lq8Rvk6ANbiBc/XCoplrkbKYh/9ef0xE1lGgDVUx2ajLfiu0MRN8n9Vhdyubx8fY78ao0cnuIqO+L+jybNYciaDkK39HsKq/8ljpCtY/jBAz/SMH7Ntaeu+UnmhEkvtzGRiIiAuIZzVoSptb5r/0aqZyE3Jh9tv/iiNYgnqjelHYp/2sRK7iyV9NFUi9wVUhNMdL1ON6Y4NX8eGa8r4ZNX6igbS/g4/+k2kk8VRGWunhbkHDZ7H5Mtac8x00gYiBWXIVL/zgZtYwjjoHZRtbnaL5hS9/TZuyIc5P5Ey0YOBgmydny+GeZjbYutUJNS/TaJszJ7yJGTt3VWYUzZoql46rVU2Inc+PXhVInTY/gp7bnTjTyOyegnbqI6ZfqGNdMwxb8PnMbY1Uk3ypBToyymeYM1hK/ltWMTRR49roAaHXmiW3EU2Hx2UDnCLCYaS8d4oZkOfllHVSKkbwXZQLGGbiJPOEKYjqB3r9eqvAXuhCReH4JqsAoPNPdz2YoX+g9kwoojYnLr2pP2PD/unCBxDUwrydldw83MoMmCIqT26rnuZ7AIjAehHHgv1C28g/qurMzdbdVYsRo4hfxxHRyFsrTSnecW2JJD8Z9CJF4FzvXi2HY0nktqi+R0M9MbCavSGHligR0aUQwS6vIxgALHakDmboVJa3Pb63HJ3mY0fvOs9tkERJVD5mEP9PvPtlZ7NcktdLR1/zZxzYIDP9wCZ1cPIy7WHcqVmllfRnujC4/vGNPjVTbVpxvj9an+rjAWZty+cTTvWhztZ1XP8Z6fFswC2FDWmcX0rX7oa0rKUAD2z3ug94ZJZ3Y2+YUrKDVan5/O1/4HiFBkm9zWALJiGgkOTn86KJwkhOIRVwS49/urTCeC/Xfh3yJ7hDs5WjXGaEi2C1Cx+Y0MltLVbKU0Nq12E43xdREVeyxEoEASBIm9mDVDmyeD9EeAxugn6fB3r0ONwxVbnA0n9luGPq3KNf0sa1tmjCfMvkbXu6qERR3LqHpGL/TzuooJUL6I4S0VYx8XUg6tHALez0VrRtxbHmNDGlJFhsrqD5Dg4M8SYEUIeNTXsoDbCIMWUFvyZ0lPSngyGc74Y8qo08SSm3V5dinc8HXLe9SJFmmZzt6OxYrVzNDO2AfnrYzVHwOxvsWiJnlPVnyQOfmLX4miFHIjF605c2PY7ym7rLaYD6/GJ/vOVXgztXurxFdwoO/Ld8LXYnaQmnbChrsEq8lq21shcnJB+RuFT1LX7CVMTr1cT0uIfuFtxnFawpmhVuJkjZjvCoAzKoj6VqfL6ZJxRo3QYdvVUSkb46S5h6rHCvO3ghYDa4WZK87J/bP7NNeOUhxJR3r7IoSTkaScg8xLZqOlWe8kUSCDQglGeNi5mWQp8/1WIwHql1iqPRCLT/VbnJ0FIhWRbJa3HYM4bZg8jlv7z6T7W5JuShLbRVS0+OyXtnONcXNs9l7Mtg1TxRv2jZcxgDitk1Za2R/pbror2Kr7gN2G5u19jXUIhguWiIxpa2UL4SUXjekSyR1ITiI1N8WLo4fSylrA8ZQf459f17SexLkzMNmWFncbe8POcndkwSepQYVg6VZUihyrDGDjTn1DZG+NedVV6QXw/qLjWtUSQE/dy06/h5OjqF3iy3mu7VDb/KdOlutRJzp5co/KwH4u73rJuXxP2OT2zDyi7Au2cRSEaTvnknNEEUKXwXkhDFN0ZAUVD002bsiGyOv4H4VriP29aubKIj+uzgt6rtz8d6N0TSCO94wBekPLESNbhoUo+yV+tzm9KtJxFBr6a5mL1HjRbY3gC2nE78hAFaZYBPfuBKNXovglt3X04BqW1G0B8asvcyPTy1EGiDdI78xIxkfszJ7K9uw0NT0RfATX3tLIEiwnH33ZGCit8coeAAZzmb3mocRQ4nEtgr+iTSLLtfkanfHUs/RynoRDt9ANxUArAmuykqX2eGwJdl/P/MY2FtL0qhVBL8svYk2qCUVUiQDMQukxVwvP1hpZ6ndGSxvSIN2QCsO5VTahvyorfO981RXjb4i7ruSjx+cNzIv2s9VKlOz2Nc/ri/6chGdHJPP6QV4WbAzFgt3023bCUUMJOqVzbF8bfTff8ypRCRP2gvhiJc336tgyqKN3/398xY1/Ag0KLrFiw+mSG2HYAun5OnTJmtNSJKjhctQR5ZeWQJgZq/6egMIr64PeBU71GUFKyR0lUKuEFKcI57I2lS3VBEIHC3EKoVGkKjo5X9zB5xJPL70Z9BghRKO+oonGidOaeHn57Uj0NsvPWAnwGx1T7AAtjo1P4hIfZHhrssgm3HAJfNSOep6C40j9l6+FkB54QFROGflvzdw3G4CpL50SWUPUFwnZUixCxqDVKi+6aJtc1qmmnn/6fna2gzlweBB4gEzISjVixzjt+l7Fpm55l8ckx2ZUtxh/Gf3+kJHGQPOwrTN/fGq2E7m6zSysZFpeHZQv5qNo4OV1bCjFIR2VYv/QV5zTHccAZQMJ0li5ap0oLUY69P99WasGaNgAnKHXZBIo2/8sum7XVPfNqECzykxBz6eXjA0qIfVxgQbDl9EnZNgBskC3WP6RHI9m0hJQzwmdLFprreJerwNQm43gOQ1YNK9zQwkvD9dVbotV0z32NJtfkvP3znvn4rJIxRFFXYYxGIp/klsi5LvfLrjsRYJr+lJ7Ej6gAKhrelvzieEwUkIfvaifU7OarpiLDno6f35L/uP7FqS1EzGSpYIP/nThI8MgGmSyATeRpC3aG9pG3NvAsrXfeMky3nc2AcburNF+CjQF4DDbykaKB8PZxIrCK6fUp9XiCeaBRiLfIk/aL2rGSzEboy/AULCJSQ93KPwPhTKcLy4VHExboe/LoCMm1gzrxHKHMBxnJwo/N3BeN/iuPkCs2n6drenrUOHp3VfsY/PahZ6BE7MZs7SMY01rDTxxWeix2w8Kbo+V7SgpBaWjKR+b3BwqrcJxwhfuLIC4a3khJuF8KnnERLBhIWvA2gtylTU++IPbGfe/PxV8hzHTuCh9m2MFqawtBPt5o2WjnabNh9eY9gecGGkBw3EuElbxGmlrbUKfL+EPBNlw1a7s2FmzNDSRMBkX9Rbu0eyI9bJY6YPmJEn2MZKalLSuFARmZIwOtWeCwV9muN/Uyvjz2yiwiarWRsF6mzyRxZ/S7fK0gj1l4h1XiOl9CyD6c6bxJF8u3ZDxYYOXs0+KVPjJe2/kVLznM/rSypmVUaTh0fnUOHYpTdwMhHXhTswUP4OquJZx95h6h3qBn506NWloTW9ScXxRzUEZFjbm3qMDh+6FWtDpGhLIuf0x4azU1NtKiyDpbkfwHOqLicQJla4rfk61ZaLIJjVPl+c6UYoXHEgk3SqetdDHsj1T9EUMTwbLvyn5KUv9uHv9LT7ICZeTxwEGFEHaNS/Kw2FXC/MleIx7B9+3oF3T6xhzYQ2eKSeZ0122QIhw1uj3XfSpoMgHAC6unmHPc8gMMJhDtFOdPoRquG3r/GCq6IH4xrFhGXr8XHqf9sYCeWR5FqhhsCHhclQDpETjQYQ2HsG/7qFKYSnH0/dX4u8q1fI6EnHBpfCpffF9Euiga/6b57uNqGFpIwO1qFLeQOGy53e5JZlZboWd+pg/YgBnsOP66VuIYoR8xWSrSfAVaICmINBMFx0CWs2U1dSJuNgGyOFZpHbJzEU72sRSYCpPNvlkSLI7DKDiAaNW3ABGTdA/wG5CXX9LgGtxZ7xX3gjYSgy7YMQgEyNKoPn/uxGsIFnJRmvLcslNyEfyFceNWAKgpV+Ta9/YWNiOKDqsOVnPoRc7ysgNiD1goaPSLleRvU7J2IEaMx94X/9LitnodCmxQi2zifbJKYRgkJ5QciMWi+XUHgXlLRvIXuEQ==", "i": 200000};
+const PLAIN=``;
+function start(RAW){
 const DATA=RAW.split("\n").filter(Boolean).map((line,i)=>{const [model,storage,color,price,code,...extra]=line.split("|");return {id:i,model,storage,color,price:Number(price),code,note:extra.join("|")};});
 const $=id=>document.getElementById(id);
 const MODELS=[...new Set(DATA.map(x=>x.model))];
@@ -239,4 +44,16 @@ function fillSelect(el,values,firstLabel){el.innerHTML="";const all=document.cre
 function updateOptions(){const m=$('modelSelect').value;const rows=DATA.filter(x=>!m||x.model===m);const storages=[...new Set(rows.map(x=>x.storage))].sort((a,b)=>parseFloat(a)-parseFloat(b));const storage=$('storage').value;fillSelect($('storage'),storages,"هەموو قەبارەکان");if(storages.includes(storage))$('storage').value=storage;const st=$('storage').value;const narrowed=rows.filter(x=>!st||x.storage===st);const colors=[...new Set(narrowed.map(x=>x.color))];const oldColor=$('colorSelect').value;fillSelect($('colorSelect'),colors,"هەموو ڕەنگەکان");if(colors.includes(oldColor))$('colorSelect').value=oldColor;$('storage').disabled=!m;$('sim').disabled=!m;$('colorSelect').disabled=!m;}
 function render(){const m=$('modelSelect').value,s=$('sim').value,st=$('storage').value,c=$('colorSelect').value;let list=DATA.filter(x=>(!m||x.model===m)&&(!s||simType(x.code)===s)&&(!st||x.storage===st)&&(!c||x.color===c));$('total').textContent=DATA.length;$('shown').textContent=list.length;$('count').textContent=list.length+" ئەنجام";if(!m){$('results').innerHTML='<div class="empty">بۆ بینینی نرخەکان، سەرەتا مۆدێلی ئایفۆن هەڵبژێرە</div>';return}const groups=new Map();for(const x of list){const k=x.model+"|"+x.storage;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(x)}if(!list.length){$('results').innerHTML='<div class="empty">هیچ نرخێک بۆ ئەم هەڵبژاردنانە نییە<br><small>فلتەرەکان بگۆڕە یان پاکیان بکەرەوە</small></div>';return}$('results').innerHTML=[...groups.values()].map(items=>{const first=items[0];return `<section class="group"><div class="group-title"><span class="model">${first.model}</span><span class="storage">${first.storage}</span></div>${items.map(x=>`<div class="item"><div class="color">${colorEmoji(x.color)} ${x.color}${x.note?`<span class="note">${x.note}</span>`:""}</div><span class="code ${badgeClass(x.code)}">${label(x.code)}</span><span class="price ${x.price===0?"na":""}">${x.price===0?"نرخی نەهاتوو":"$"+x.price.toLocaleString("en-US")}</span></div>`).join("")}</section>`}).join("");}
 $('modelSelect').addEventListener('change',()=>{$('storage').value="";$('sim').value="";updateOptions();render()});$('storage').addEventListener('change',()=>{const prev=$('colorSelect').value;updateOptions();$('colorSelect').value=prev;render()});$('sim').addEventListener('change',render);$('colorSelect').addEventListener('change',render);$('reset').addEventListener('click',()=>{$('modelSelect').value="";$('sim').value="";updateOptions();render()});$('total').textContent=DATA.length;updateOptions();render();
+}
+(function(){
+const lock=document.getElementById("lock");
+if(!ENC){lock.remove();start(PLAIN);return}
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function dec(pw){const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(ENC.s),iterations:ENC.i,hash:"SHA-256"},km,{name:"AES-GCM",length:256},false,["decrypt"]);return new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:b(ENC.v)},key,b(ENC.c)))}
+async function tryPw(pw,remember){try{const raw=await dec(pw);if(remember){try{localStorage.setItem("pw",pw)}catch(e){}}lock.remove();document.body.classList.remove("locked");start(raw);return true}catch(e){return false}}
+const f=document.getElementById("lockForm"),inp=document.getElementById("lockPw"),err=document.getElementById("lockErr");
+f.addEventListener("submit",async e=>{e.preventDefault();err.textContent="";const ok=await tryPw(inp.value,true);if(!ok){err.textContent="وشەی نهێنی هەڵەیە";inp.value="";inp.focus()}});
+let saved=null;try{saved=localStorage.getItem("pw")}catch(e){}
+if(saved)tryPw(saved,false).then(ok=>{if(!ok){try{localStorage.removeItem("pw")}catch(e){}}});
+})();
 </script></body></html>
