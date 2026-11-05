@@ -72,6 +72,61 @@ def encrypt(text, password):
     return json.dumps({"s": e(salt), "v": e(iv), "c": e(ct), "i": iters})
 
 
+def decrypt(enc_json, password):
+    import json
+    from cryptography.hazmat.primitives import hashes
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+    d = json.loads(enc_json)
+    d64 = lambda x: base64.b64decode(x)
+    key = PBKDF2HMAC(algorithm=hashes.SHA256(), length=32, salt=d64(d["s"]), iterations=d["i"]).derive(password.encode())
+    return AESGCM(key).decrypt(d64(d["v"]), d64(d["c"]), None).decode()
+
+
+def load_existing():
+    """Reads the prices already published in index.html (iZone) and removes its markup.
+    Returns a list of RAW lines, or None if they can not be read."""
+    name = "index.html"
+    try:
+        html = open(name, encoding="utf-8").read()
+        e = re.search(r"const ENC=(null|\{[^}]*\});", html)
+        if not e:
+            return None
+        if e.group(1) == "null":
+            p = re.search(r"const PLAIN=`(.*?)`;", html, re.S)
+            raw = p.group(1) if p else ""
+        else:
+            raw = decrypt(e.group(1), PASSWORDS.get(name, ""))
+        lines = [l for l in raw.split("\n") if l.strip()]
+        extra = STORES[name]
+        if extra:
+            for i, l in enumerate(lines):
+                p = l.split("|")
+                if int(p[3]) > 0:
+                    p[3] = str(int(p[3]) - extra)
+                lines[i] = "|".join(p)
+        return lines
+    except Exception as e:
+        print("could not read existing prices:", e)
+        return None
+
+
+def merge(old, new):
+    """Keeps every old price; new lines replace the same item (model+storage+color+code) or are added."""
+    key = lambda l: tuple(l.split("|")[:3] + [l.split("|")[4]])
+    d = {key(l): l for l in old}
+    updated = added = 0
+    for l in new:
+        k = key(l)
+        if k in d:
+            if d[k] != l:
+                updated += 1
+        else:
+            added += 1
+        d[k] = l
+    return list(d.values()), updated, added
+
+
 def build(lines):
     """Writes one html file per store. Returns {filename: html}."""
     tpl = open(os.path.join(os.path.dirname(__file__), "template.html"), encoding="utf-8").read()

@@ -38,7 +38,7 @@ def check():
     if msgs and time.time() - max(m["date"] for m in msgs) < MIN_AGE:
         print("newest message is too fresh, waiting"); return False
 
-    lines, state = [], {}
+    lines, state, full = [], {}, False
     for m in msgs:
         chat = m["chat"]["id"]
         sender = (m.get("from") or {}).get("id")
@@ -46,13 +46,21 @@ def check():
             bot.say(bot.NOTIFY_ID or chat, f"chat id: {chat}\nyour id: {sender}"); continue
         if not ({chat, sender} & bot.ALLOWED_IDS):
             continue
+        if "/full" in m["text"].lower():
+            full = True
         lines += bot.parse(m["text"], state)
 
     requests.get(f"{API}/getUpdates", params={"offset": last_id + 1, "timeout": 0}, timeout=30)  # mark as read
     if lines:
-        bot.build(lines)
-        bot.say(bot.NOTIFY_ID or chat, f"\u2705 {len(lines)} prices updated. The site refreshes in about 1 minute.")
-        print(f"built pages with {len(lines)} prices")
+        old = bot.load_existing()
+        if full or not old or len(lines) >= 0.9 * len(old):
+            final, text = lines, f"\u2705 Full list: {len(lines)} prices."
+        else:
+            final, upd, add = bot.merge(old, lines)
+            text = f"\u2705 {upd} updated, {add} added. Total: {len(final)} prices (the other prices were kept)."
+        bot.build(final)
+        bot.say(bot.NOTIFY_ID or chat, text + " The site refreshes in about 1 minute.")
+        print(text)
         return True
     print("no price list found in the new messages")
     return False
